@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:'Poppins',sans-serif;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    width:100%;
+    min-height:100vh;
+    background:linear-gradient(1800deg, #17A589 ,#D5F5E3);     /*for the linear gradient in the background*/
+    padding:10px;
+}
+
+.to-do-app{                         /* for the white background box which has the items in it */
+    width:100%;
+    max-width:540px;
+    background:white;
+    margin: 100px auto 20px;            /* its in the center as the left and right side margin is auto */
+    padding:40px 30px 70px;
+    border-radius:10px;
+}
+
+.to-do-app h2{                  /* for the to do list heading */
+    color: #002765;
+    display:flex;           /* to align text and icon */
+    align-items:center;
+    margin-bottom: 20px;
+
+}
+
+.to-do-app h2 img{              /* for the to do list icon*/
+    width:30px;
+    margin-left:10px;
+}
+
+
+.row{                           /*for the add text field button */ 
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#edeef0;
+    border-radius:30px;
+    padding-left:20px;
+    margin-bottom:25px;
+}
+
+input{
+    flex:1;             /*for taking full width*/
+    border:none;
+    outline:none;
+    background:transparent;
+    padding:10px;
+}
+
+button{             /*for the add button*/
+    border:none;
+    outline:none;
+    padding:16px 50px;
+    background:#ff5945;
+    color:#fff;         /*for the "add" text in the button */
+    font-size:16px;
+    cursor:pointer;
+    border-radius:30px;
+}
+
+ul li{                      /*for the list items in the space, (the tasks)*/
+    list-style:none;
+    font-size:17px;
+    padding:12px 8px 8px 50px;
+    user-select:none;
+    cursor:pointer;
+    position:relative;
+}
+
+ul li::before{              /* to add the circle in before of the tasks, to show it is unchecked*/
+    content:'';
+    position:absolute;
+    height:28px;
+    width:28px;
+    border-radius:50%;
+    background-image:url(images/unchecked.png);
+    background-size:cover;
+    background-position:center;
+    top:12px;
+    left:8px;
+   
+}
+
+ul li.checked{                          /*once the task is selected, the task has to be striked through */
+    color:#555;
+    text-decoration:line-through;
+
+}
+
+ul li.checked::before{                              /*once the task is striked through, task must become checked*/
+    background-image:url(images/checked.png);
+}
+
+ul li span{                         /*for the cross mark */
+    position:absolute;
+    right:0;
+    top:5px;
+    width:40px;
+    height:40px;
+    font-size:22px;
+    color:#555;
+    line-height:40px;
+    text-align:center;
+    border-radius:50%;
+}
+
+
+ul li span:hover{                   /* for the cross mark hovering effect*/
+    background:#edeef0;
+}
